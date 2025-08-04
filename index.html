@@ -1,3 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Cental - Car Rent Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- template de contact et catalogue de formation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="an1onymous" />
+
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .category-buttons a {
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .category-buttons a.active,
+        .category-buttons a:hover {
+            background-color: #800000;
+            color: white !important;
+            border-color: #800000 !important;
+        }
+
+        /* Conteneur des cartes pour Flexbox */
+        .row.category-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .category-section .card-wrapper {
+            display: flex;
+            margin-bottom: 1rem;
+            height: 100%;
+            flex: 1 1 auto;
+        }
+
+        /* Responsive – largeur des cartes */
+        .category-section .card-wrapper {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @media (min-width: 576px) {
+            .category-section .card-wrapper {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .category-section .card-wrapper {
+                flex: 0 0 calc(50% - 0.75rem);
+                max-width: calc(50% - 0.75rem);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .category-section .card-wrapper {
+                flex: 0 0 calc(33.333% - 1rem);
+                max-width: calc(33.333% - 1rem);
+            }
+        }
+
+        /* Cartes */
+        .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            color: #000;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        /* Image de la carte */
+        .card-img-top {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 0.375rem;
+            border-top-right-radius: 0.375rem;
+        }
+
+        /* Corps de la carte (titre + boutons) */
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        /* Titre */
+        .card-title {
+            color: #000;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-align: center;
+            transition: color 0.3s;
+        }
+
+        /* Groupe de boutons côte à côte */
+        .card-body .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.4rem;
+            margin-top: auto;
+        }
+
+        /* Bouton Détails en marron clair */
+        .card-body .btn-primary {
+            background-color: #8B4513;
+            border-color: #8B4513;
+            color: white;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .card-body .btn-primary:hover {
+            background-color: #A0522D;
+            border-color: #A0522D;
+            color: white;
+        }
+
+        /* Bouton S'inscrire en rouge foncé */
+        .card-body .btn-secondary {
+            background-color: #800000;
+            border-color: #800000;
+            color: white;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .card-body .btn-secondary:hover {
+            background-color: #A00000;
+            border-color: #A00000;
+            color: white;
+        }
+
+        /* Hover sur carte */
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover .card-title {
+            color: #000 !important;
+        }
+
+        /* topbar */
+        .topbar {
+            background: linear-gradient(90deg, #0b3a13, #800000);
+        }
+
+        /* Pour que le texte soit bien visible */
+        .topbar a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .topbar a:hover {
+            color: #ffd6d6;
+        }
+
+        /* Petite amélioration des icônes */
+        .topbar i {
+            margin-right: 5px;
+        }
+
+        /* style des contenu details */
+
+        /* Centrer et styliser le titre du modal */
+        #detailsModal .modal-title {
+            text-align: center;
+            font-weight: bold;
+            color: #800000;
+            width: 100%;
+        }
+
+        #detailsModal .modal-dialog {
+            max-width: 600px;
+            width: 95%;
+            margin: auto;
+        }
+
+        #detailsModal .modal-body ul {
+            text-align: left;
+            margin: 0 0 1rem 0;
+            padding-left: 1.2rem;
+            list-style: disc inside;
+        }
+
+        #detailsModal .modal-body strong {
+            display: block;
+            margin-top: 1.2em;
+            margin-bottom: 0.5em;
+            font-size: 1.08em;
+            color: #800000;
+            text-align: left;
+        }
+
+        #detailsModal .modal-body {
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* Styliser le code */
+        #detailsModal .modal-body strong {
+            color: #111;
+            font-weight: bold;
+        }
+
+        /* Icônes pour durée et date */
+        #detailsModal .fa-clock,
+        #detailsModal .fa-calendar-alt {
+            color: #800000;
+            margin-right: 6px;
+            font-size: 1.1em;
+            vertical-align: middle;
+        }
+
+        #detailsModal .modal-content {
+            padding: 0.5rem 0;
+        }
+
+        /* Bouton Détails stylisé */
+        .btn-details {
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: #fff;
+            color: #fefefe !important;
+            border: 2px solid #800000;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-details:hover {
+            background: #800000;
+            color: #fff !important;
+        }
+
+        /* style du formulaire */
+
+        /* À placer dans ton fichier CSS ou dans un <style> */
+        .bg-light {
+            background: #f8f9fa !important;
+        }
+
+        .shadow {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .10) !important;
+        }
+
+        .rounded {
+            border-radius: 1rem !important;
+        }
+
+        input,
+        select,
+        textarea {
+            background: #fff !important;
+        }
+
+        .form-wrapper {
+            background-color: #f8f9fa;
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        /* MODALE (POP-UP) GÉNÉRALE */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+
+
+        }
+
+        /* CONTENU DE LA MODALE */
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* TITRE DE LA MODALE */
+        .modal-content h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #800000;
+        }
+
+        /* FORMULAIRE */
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* LABELS */
+        .modal-content label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* INPUTS */
+        .modal-content input,
+        .modal-content select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        /* BOUTON DE SOUMISSION */
+        .modal-content button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-content button:hover {
+            background-color: #a00000;
+        }
+
+        /* BOUTON FERMER */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: -20px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        /* pour les icones  */
+
+
+
+        .info-header {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-row {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-item i {
+            color: #800000;
+            font-size: 1.2em;
+            width: 25px;
+        }
+
+        .info-item strong {
+            margin-right: 0.5rem;
+            color: #333;
+        }
+
+        .section-block {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            color: #800000;
+            border-bottom: 2px solid #800000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title i {
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+    </style>
+
+    <!-- autre style -->
+    <style>
+        /* Style pour la modale des détails */
+        .modal-info-header {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .info-item {
+            color: #333;
+        }
+
+        .info-item i {
+            color: #800000;
+            width: 24px;
+        }
+
+        .section-block {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            color: #800000;
+            border-bottom: 2px solid #800000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title i {
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+
+        .section-block ul {
+            margin-bottom: 0;
+        }
+
+        .section-block li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section-block li:before {
+            content: "•";
+            color: #800000;
+            position: absolute;
+            left: 0;
+        }
+
+
+
+        /* Style pour la modale d'inscription */
+        .modal-dialog.modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            /* Ajustez selon vos besoins */
+            margin: 1.75rem auto;
+        }
+
+        .modal-content {
+            width: 100%;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        .modal-body {
+            width: 100%;
+            max-width: 600px;
+            /* Ajustez selon vos besoins */
+            margin: auto;
+            padding: 2rem !important;
+        }
+
+        /* Assurer que le contenu du formulaire est bien centré */
+        .modal-body .w-100 {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        /* Style pour le conteneur du formulaire */
+        .bg-light {
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        /* Style responsive */
+        @media (max-width: 768px) {
+            .modal-dialog {
+                margin: 1rem;
+            }
+
+            .modal-body {
+                padding: 1rem !important;
+            }
+        }
+    </style>
+    <!-- couleurs des polices  -->
+
+    <style>
+        /* Texte général en noir */
+        #detailsModal .modal-body {
+            color: #000000;
+            /* Noir */
+            font-family: 'Arial', sans-serif;
+            font-size: 15px;
+        }
+
+        /* Titres en gras et bien visibles */
+        #detailsModal .modal-body strong {
+            color: #000000;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        /* Listes bien espacées */
+        #detailsModal .modal-body ul {
+            padding-left: 20px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        #detailsModal .modal-body ul li {
+            margin-bottom: 6px;
+        }
+
+        /* Icônes et dates */
+        #detailsModal .modal-body i {
+            color: #000000;
+            margin-right: 6px;
+        }
+
+        /* Centrage du haut */
+        #detailsModal .modal-body div[style*="text-align:center"] {
+            margin-bottom: 15px;
+        }
+
+        /* Paragraphes */
+        #detailsModal .modal-body p {
+            color: #000000;
+        }
+    </style>
+
+
+
+    <style>
         .hero-section {
             background: url("img/Accuil_IEC/perry-grone-lbLgFFlADrY-unsplash-1-scaled-2560x1280.jpg") no-repeat center center/cover;
             height: 100vh;
@@ -5,16 +652,18 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 40px;
+            padding: 20px;
         }
 
         .overlay {
             background: rgba(249, 245, 245, 0.6);
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
-            width: 500px;
-            max-width: 500px;
+            width: 100%;
+            max-width: 450px;
             color: white;
+            align-self: flex-start;
+            margin-top: 0;
         }
 
         .text-side {
@@ -23,8 +672,10 @@
             max-width: 500px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             height: auto;
+            align-self: flex-start;
+            margin-top: 0;
         }
 
         .text-side h1 {
@@ -32,6 +683,7 @@
             font-weight: bold;
             color: #f1efef;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .text-side p {
@@ -53,10 +705,11 @@
 
         .row-container {
             display: flex;
-            align-items: center;
-            gap: 50px;
+            align-items: flex-start;
+            gap: 40px;
             width: 100%;
             max-width: 1200px;
+            margin-top: -50px;
         }
 
         @media (max-width: 992px) {
@@ -64,16 +717,615 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
+                margin-top: 0;
             }
 
             .text-side {
                 margin-left: 0;
                 text-align: center;
                 margin-bottom: 0;
+                order: 2;
             }
 
             .overlay {
                 width: 100%;
                 max-width: 400px;
+                order: 1;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
             }
         }
+
+        @media (max-width: 768px) {
+            .text-side h1 {
+                font-size: 2.5rem;
+            }
+            
+            .overlay {
+                max-width: 350px;
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <style>
+        /* Ajoutez ces styles dans votre section style existante */
+        .text-justify {
+            text-align: justify;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .btn-outline-secondary {
+            color: #800000;
+            border-color: #800000;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #800000;
+            color: white;
+        }
+
+        .ratio-16x9 {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .btn-details {
+            pointer-events: painted;
+            /* Empêche les clics */
+            opacity: 0.6;
+            /* Effet visuel grisé */
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100">
+        <div class="container">
+            <div class="row gx-0 align-items-center" style="height: 45px;">
+                <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="text-muted me-4"><i class="fas fa-envelope"></i>Contactez-nous</a>
+                        <a href="tel:+216 55 968 927" class="text-muted me-4"><i
+                                class="fas fa-phone-alt text-primary me-2"></i> +216 55 968 927 </a>
+                        <a href="CATALOGUE IEC -2024 IEC.pdf" class="text-muted me-0" target="_blank"><i
+                                class="fas fa-download"></i>Catalogue Des Formations 2024</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a href="https://www.facebook.com/InternationalEliteConsulting/"
+                            class="btn btn-light btn-sm-square rounded-circle me-3"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/iecconsulting" class="btn btn-light btn-sm-square rounded-circle me-3"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/internationaleliteconsulting/?hl=fr"
+                            class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/international-%C3%A9lite-consulting/?originalSubdomain=tn"
+                            class="btn btn-light btn-sm-square rounded-circle me-3"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCd79H53vNvVFnfIXey6L8IA"
+                            class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="" class="navbar-brand p-0">
+                    <!-- <h1 class="display-6 text-primary"><i class="fas fa-car-alt me-3"></i></i>Cental</h1> -->
+                    <img src="img/LOGO IEC COVE 01.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link ">Acceuil</a>
+                        <a href="Formation.html" class="nav-item nav-link">Formation</a>
+                        <!-- liste deroulante de Services -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="Assistance_des_entreprises.html" class="dropdown-item">assistance des
+                                    entreprises</a>
+                                <a href="Accompagnement_digitale.html" class="dropdown-item">Accompagnement digitale</a>
+                                <a href="consulting.html" class="dropdown-item">Consulting</a>
+                                <a href="coaching.html" class="dropdown-item">Coaching</a>
+                                <a href="team-building.html" class="dropdown-item">Team building</a>
+                                <a href="Pack_séjour_formation.html" class="dropdown-item clignotant">Pack séjour de
+                                    formation</a>
+                            </div>
+                        </div>
+
+                        <!--liste deroulante de cycles et seminaires-->
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cycles &
+                                Séminraires</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="nos_cycles.html" class="dropdown-item">Nos Cycles</a>
+                                <a href="nos-seminaires.html" class="dropdown-item">Nos Séminires</a>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="recrutement.html" class="nav-item nav-link">Recrutement</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- code start -->
+
+
+    <section class="hero-section">
+        <div class="row-container">
+            <!-- Formulaire à gauche -->
+            <div class="overlay">
+                <div class="overlay">
+                    <h5 class="text-uppercase fw-bold mb-10" style="text-align: center; ">inscription aux formations
+                    </h5>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Type*</label>
+                            <div class="d-flex gap-3">
+                                <div>
+                                    <input type="radio" id="civiliteP" name="civilite" value="Presientiel">
+                                    <label for="civiliteP">Présentiel</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="civiliteL" name="civilite" value="ligne">
+                                    <label for="civiliteL">En ligne</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Civilité*</label>
+                            <div class="d-flex gap-3">
+                                <div>
+                                    <input type="radio" id="civiliteM" name="civilite2" value="M">
+                                    <label for="civiliteM">M.</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="civiliteMme" name="civilite2" value="Mme">
+                                    <label for="civiliteMme">Mme</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Nom*" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Prénom*" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-flag"></i></span>
+                            <select name="pays" class="form-select" required>
+                                <option value="">-- Sélectionnez un pays --</option>
+
+                                <option value="Afghanistan">Afghanistan</option>
+                                <option value="Afrique du Sud">Afrique du Sud</option>
+                                <option value="Albanie">Albanie</option>
+                                <option value="Algérie">Algérie</option>
+                                <option value="Allemagne">Allemagne</option>
+                                <option value="Andorre">Andorre</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Arabie Saoudite">Arabie Saoudite</option>
+                                <option value="Argentine">Argentine</option>
+                                <option value="Arménie">Arménie</option>
+                                <option value="Australie">Australie</option>
+                                <option value="Autriche">Autriche</option>
+                                <option value="Azerbaïdjan">Azerbaïdjan</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Bahreïn">Bahreïn</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Belgique">Belgique</option>
+                                <option value="Bénin">Bénin</option>
+                                <option value="Bhoutan">Bhoutan</option>
+                                <option value="Biélorussie">Biélorussie</option>
+                                <option value="Bolivie">Bolivie</option>
+                                <option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
+                                <option value="Botswana">Botswana</option>
+                                <option value="Brésil">Brésil</option>
+                                <option value="Brunei">Brunei</option>
+                                <option value="Bulgarie">Bulgarie</option>
+                                <option value="Burkina Faso">Burkina Faso</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Cameroun">Cameroun</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Chili">Chili</option>
+                                <option value="Chine">Chine</option>
+                                <option value="Chypre">Chypre</option>
+                                <option value="Colombie">Colombie</option>
+                                <option value="Comores">Comores</option>
+                                <option value="Congo">Congo</option>
+                                <option value="Corée du Sud">Corée du Sud</option>
+                                <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                <option value="Croatie">Croatie</option>
+                                <option value="Danemark">Danemark</option>
+                                <option value="Djibouti">Djibouti</option>
+                                <option value="Égypte">Égypte</option>
+                                <option value="Émirats arabes unis">Émirats arabes unis</option>
+                                <option value="Équateur">Équateur</option>
+                                <option value="Espagne">Espagne</option>
+                                <option value="Estonie">Estonie</option>
+                                <option value="États-Unis">États-Unis</option>
+                                <option value="Éthiopie">Éthiopie</option>
+                                <option value="Finlande">Finlande</option>
+                                <option value="France">France</option>
+                                <option value="Gabon">Gabon</option>
+                                <option value="Gambie">Gambie</option>
+                                <option value="Géorgie">Géorgie</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Grèce">Grèce</option>
+                                <option value="Guinée">Guinée</option>
+                                <option value="Guinée-Bissau">Guinée-Bissau</option>
+                                <option value="Guinée équatoriale">Guinée équatoriale</option>
+                                <option value="Haïti">Haïti</option>
+                                <option value="Hongrie">Hongrie</option>
+                                <option value="Inde">Inde</option>
+                                <option value="Indonésie">Indonésie</option>
+                                <option value="Irak">Irak</option>
+                                <option value="Iran">Iran</option>
+                                <option value="Irlande">Irlande</option>
+                                <option value="Islande">Islande</option>
+                                <option value="Israël">Israël</option>
+                                <option value="Italie">Italie</option>
+                                <option value="Japon">Japon</option>
+                                <option value="Jordanie">Jordanie</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Koweït">Koweït</option>
+                                <option value="Lettonie">Lettonie</option>
+                                <option value="Liban">Liban</option>
+                                <option value="Libye">Libye</option>
+                                <option value="Lituanie">Lituanie</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Madagascar">Madagascar</option>
+                                <option value="Malaisie">Malaisie</option>
+                                <option value="Mali">Mali</option>
+                                <option value="Maroc">Maroc</option>
+                                <option value="Maurice">Maurice</option>
+                                <option value="Mauritanie">Mauritanie</option>
+                                <option value="Mexique">Mexique</option>
+                                <option value="Monaco">Monaco</option>
+                                <option value="Mongolie">Mongolie</option>
+                                <option value="Mozambique">Mozambique</option>
+                                <option value="Namibie">Namibie</option>
+                                <option value="Népal">Népal</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Nigéria">Nigéria</option>
+                                <option value="Norvège">Norvège</option>
+                                <option value="Nouvelle-Zélande">Nouvelle-Zélande</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Ouzbékistan">Ouzbékistan</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Palestine">Palestine</option>
+                                <option value="Panama">Panama</option>
+                                <option value="Pays-Bas">Pays-Bas</option>
+                                <option value="Pérou">Pérou</option>
+                                <option value="Philippines">Philippines</option>
+                                <option value="Pologne">Pologne</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="République centrafricaine">République centrafricaine
+                                </option>
+                                <option value="République tchèque">République tchèque</option>
+                                <option value="Roumanie">Roumanie</option>
+                                <option value="Royaume-Uni">Royaume-Uni</option>
+                                <option value="Russie">Russie</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Sénégal">Sénégal</option>
+                                <option value="Serbie">Serbie</option>
+                                <option value="Singapour">Singapour</option>
+                                <option value="Slovaquie">Slovaquie</option>
+                                <option value="Slovénie">Slovénie</option>
+                                <option value="Somalie">Somalie</option>
+                                <option value="Soudan">Soudan</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Suède">Suède</option>
+                                <option value="Suisse">Suisse</option>
+                                <option value="Syrie">Syrie</option>
+                                <option value="Tadjikistan">Tadjikistan</option>
+                                <option value="Tanzanie">Tanzanie</option>
+                                <option value="Tchad">Tchad</option>
+                                <option value="Thaïlande">Thaïlande</option>
+                                <option value="Tunisie">Tunisie</option>
+                                <option value="Turquie">Turquie</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Yémen">Yémen</option>
+                                <option value="Zambie">Zambie</option>
+                                <option value="Zimbabwe">Zimbabwe</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input type="text" class="form-control" placeholder="N° Téléphone" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Email*" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                            <input type="text" class="form-control" placeholder="Poste occupé*" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-building"></i></span>
+                            <input type="text" class="form-control" placeholder="Organisme/Employeur*" required>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                            <input type="date" class="form-control" required>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="notRobot">
+                            <label class="form-check-label" for="notRobot">
+                                <i class="fa-solid fa-robot" style="color:#4CAF50; margin-right: 8px;"></i>
+                                Je ne suis pas un robot
+                            </label>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-secondary px-5" type="submit">S'inscrire</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Texte à droite -->
+            <div class="text-side">
+                <h1>TRANSFORMATION DIGITAL</h1>
+                <p>Accompagnement, formations et mise en place de solutions pour la transformation numérique de votre
+                    entreprise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Qui sommes-nous -->
+    <section class="container py-5">
+        <div class="text-center mb-5">
+            <h1 style="color: #800000;">QUI SOMMES-NOUS?</h1>
+            <p class="fs-5" style="color: #000;">International Elite Consulting</p>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <div class="ratio ratio-16x9">
+                    <video src="img/Accuil_IEC/videos_acceuil.mp4" autoplay muted class="rounded shadow-lg"></video>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-justify">
+                    INTERNATIONAL ELITE CONSULTING est une institution internationale de formation continue et de
+                    consulting, agréée par l'état et le ministère de la formation et de l'emploi en Tunisie et
+                    enregistrée à la CNFCPP.
+                </p>
+                <p class="text-justify">
+                    Installée depuis 2012, IEC est incontestablement considérée comme une Institution faisant partie des
+                    premières sur le plan de renforcement des capacités humaines et institutionnelles pour la bonne
+                    gouvernance et le développement économique durable en Afrique.
+                </p>
+                <div class="text-center mt-4">
+                    <a href="qui-sommes-nous.html" class="btn btn-outline-secondary px-4">Lire la suite</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="formations-carousel-section">
+        <div class="container py-5">
+            <h1 class="formations-title"
+                style="color: #800000; text-align: center; font-size: 60px; margin-bottom: 40px;">FORMATIONS EN COURS
+            </h1>
+
+            <!-- Carousel Container -->
+            <div class="formations-carousel-container">
+                <div class="formations-carousel-wrapper">
+                    <div class="formations-carousel" id="formationsCarousel">
+
+                        <!-- Microsoft -->
+                        <div class="formation-card" data-category-item="Microsoft">
+                            <div class="formation-card-inner">
+                                <div class="formation-card-image">
+                                    <img src="img/ " alt="AUDIT INFORMATIQUE" />
+                                </div>
+                                <div class="formation-card-content">
+                                    <h5 class="formation-card-title">AUDIT INFORMATIQUE</h5>
+                                    <div class="formation-card-buttons">
+                                        <button type="button" class="btn btn-details" data-bs-toggle="modal"
+                                            data-bs-target="#detailsModal" data-title="AUDIT INFORMATIQUE"
+                                            data-description='<strong>CODE :</strong>IEC-IT01<br>
+<strong>Durée :</strong> 01 semaine<br>
+<strong>Date :</strong>Du 15 au 19 Janvier<br>
+<strong>OBJECTIFS</strong><br>
+<ul>
+ <li> Maîtriser les concepts fondamentaux de l' audit informatique</li>
+                                            <li> Comprendre les méthodologies d'audit des systèmes d'information</li>
+                                            <li> Apprendre à évaluer les risques informatiques et la sécurité</li>
+                                            <li> Acquérir les techniques d'audit des infrastructures IT</li>
+                                            </ul>
+                                            <strong>CIBLES</strong>
+                                            <ul>
+                                                <li> Auditeurs informatiques</li>
+                                                <li> Consultants en sécurité informatique</li>
+                                                <li> Responsables IT</li>
+                                                <li> Chefs de projet informatique</li>
+                                                <li> Experts en cybersécurité</li>
+                                            </ul>
+                                            <strong>SUIVI POST FORMATION :</strong>
+                                            <ul>
+                                                <li>Les services d'IEC ne s'arrêtent pas au moment de la remise du
+                                                    certificat. l'institut met à votre disposition un accompagnement
+                                                    personnalisé continu qui prendra effet à compte de la cloture de la
+                                                    session des formations</li>
+                                            </ul>
+                                            <strong>PRE-REQUIS</strong>
+                                            <ul>
+                                                <li>Connaissances de base en informatique et systèmes d'information</li>
+                                            </ul>'>Détails
+                                        </button>
+                                        <button type="button" class="btn btn-inscrire" data-bs-toggle="modal"
+                                            data-bs-target="#inscriptionModal"
+                                            data-title="La gestion des compétences RH et les enjeux du numérique">S'inscrire</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Le reste du contenu HTML continue ici... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="footer-video-wrapper position-relative overflow-hidden text-white">
+        <!-- Vidéo en arrière-plan -->
+        <video class="footer-video position-absolute w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
+            <source src="videos_IEC/videos_footer.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <!-- Contenu réel du footer -->
+        <div class="footer-content position-relative" style="z-index: 1;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <!-- Colonne 1 -->
+                    <div class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-end align-items-start">
+                        <img src="img/LOGO_IEC_COVE_011_IEC png.png" alt="Description de l'image" class="img-fluid"
+                            style="color: white;" width="250" height="250">
+                    </div>
+
+                    <!-- Colonne 2 -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">EXPLORER</h4>
+                            <a href="index.html" class="text-white mb-2">Accueil</a>
+                            <a href="#" class="text-white mb-2">Formations</a>
+                            <a href="#" class="text-white mb-2">Cycles</a>
+                            <a href="#" class="text-white mb-2">Séminaires</a>
+                            <a href="#" class="text-white">Contact</a>
+                        </div>
+                    </div>
+
+                    <!-- Colonne 3 -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">CONTACTS</h4>
+                            <a href="#" class="text-white"><i class="fa fa-map-marker-alt me-2"></i> 53-55 Avenue de
+                                Paris, Tunis</a>
+                            <a href="mailto:contact@internationaleliteconsulting.com" class="text-white"><i
+                                    class="fas fa-envelope me-2"></i> contact@internationaleliteconsulting.com</a>
+                            <a href="tel:+21655968927" class="text-white"><i class="fas fa-phone me-2"></i> +216 55
+                                968
+                                927</a>
+                            <a href="#" class="text-white"><i class="fas fa-lock me-2"></i> Lundi - Samedi</a>
+                            <a href="#" class="text-white"><i class="fas fa-clock me-2"></i> 08:00 – 20:00</a>
+                        </div>
+                    </div>
+
+                    <!-- Colonne 4 -->
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column align-items-end">
+                            <p class="mb-3">S'INSCRIRE A LA NEWSLETTER</p>
+                            <div class="position-relative w-100" style="max-width: 400px;">
+                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
+                                    placeholder="Enter your email">
+                                <button type="button"
+                                    class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Subscribe</button>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-end w-100" style="max-width: 400px;">
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                    href="https://www.facebook.com/InternationalEliteConsulting/"><i
+                                        class="fab fa-facebook-f text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                    href="https://x.com/iecconsulting"><i class="fab fa-twitter text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                    href="https://www.instagram.com/internationaleliteconsulting/?hl=fr"><i
+                                        class="fab fa-instagram text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-3"
+                                    href="https://www.linkedin.com/company/international-%C3%A9lite-consulting/?originalSubdomain=tn"><i
+                                        class="fab fa-linkedin-in text-white"></i></a>
+                                <a class="btn btn-secondary btn-md-square rounded-circle me-0"
+                                    href="https://www.youtube.com/channel/UCd79H53vNvVFnfIXey6L8IA"><i
+                                        class="fab fa-youtube text-white"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto text-center">
+                    <span class="text-body">
+                        <a href="#" class="border-bottom text-white">
+                            <i class="fas fa-copyright text-light me-2"></i>
+                            International Elite Consulting
+                        </a>, Tous droits réservés.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
